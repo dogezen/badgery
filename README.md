@@ -2,7 +2,7 @@
 
 This package defines some colourful badges and boxes around text that represent user interface actions such as a click or following a menu.
 
-For examples have a look at the example [main.pdf](./exmaple/main.pdf).
+For examples have a look at the example [main.typ](./example/main.typ), [main.pdf](./exmaple/main.pdf).
 
 ![example](./demo.png)
 
