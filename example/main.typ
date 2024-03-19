@@ -14,7 +14,7 @@ This package defines some colourful badges and boxes around text that represent 
 #badge-yellow("Yellow badge"),
 #badge-green("Green badge"),
 #badge-blue("Blue badge"),
-#badge-purple("Purble badge")
+#badge-purple("Purple badge")
 ```
 
 
@@ -26,7 +26,7 @@ This package defines some colourful badges and boxes around text that represent 
   badge-yellow("Yellow badge"),
   badge-green("Green badge"),
   badge-blue("Blue badge"),
-  badge-purple("Purble badge")
+  badge-purple("Purple badge")
 )
 
 == User interface actions

@@ -14,7 +14,7 @@ For examples have a look at the example [main.typ](./example/main.typ), [main.pd
 #badge-yellow("Yellow badge"),
 #badge-green("Green badge"),
 #badge-blue("Blue badge"),
-#badge-purple("Purble badge")
+#badge-purple("Purple badge")
 ```
 
 ## User interface actions
