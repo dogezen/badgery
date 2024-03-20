@@ -42,16 +42,16 @@ This is a user interface action (ie. a click):
 This is an action to follow a user interface menu (2 steps):
 
 ```typ
-#menu(("File", "New File..."))
+#menu("File", "New File...")
 ```
 
-#menu(("File", "New File..."))
+#menu("File", "New File...")
 
 This is a menu action with multiple steps:
 
 ```typ
-#menu(("Menu", "Sub-menu", "Sub-sub menu", "Action"))
+#menu("Menu", "Sub-menu", "Sub-sub menu", "Action")
 ```
 
-#menu(("Menu", "Sub-menu", "Sub-sub menu", "Action"))
+#menu("Menu", "Sub-menu", "Sub-sub menu", "Action")
 

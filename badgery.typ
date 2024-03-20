@@ -172,29 +172,27 @@
   )
 }
 
-#let menu(items) = {
-  if type(items) == str {
-    ui-action(items)
-  } else if type(items) == array{
-    if items.len() < 2 {
-      ui-action(items.at(0))
-    } else {
-      let mapped-items = ()
-      for (idx, value) in items.enumerate() {
-        if (idx + 1) == items.len() {
-          mapped-items.push(menu-end(value))
-        } else if idx < 1 {
-          mapped-items.push(menu-begin(value))
-        } 
-        else {
-          mapped-items.push(menu-middle(value))
-        }
+#let menu(..items) = {
+  let positionalItems = items.pos()
+  let count = positionalItems.len()
+  if(count == 1) {
+    ui-action(positionalItems.at(0))
+  }
+  else {
+    let mapped-items = ()
+    for (idx, value) in positionalItems.enumerate() {
+      if (idx + 1) == count {
+        mapped-items.push(menu-end(value))
+      } else if idx < 1 {
+        mapped-items.push(menu-begin(value))
+      } 
+      else {
+        mapped-items.push(menu-middle(value))
       }
-
-      stack(
-        dir: ltr,
-        .. mapped-items
-      )
     }
+    stack(
+      dir: ltr,
+      .. mapped-items
+    )
   }
 }
