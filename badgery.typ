@@ -90,26 +90,25 @@
   left: none,
 )
 
-#let menu-path-output(height: 14.6pt, xStart: -2pt, xEnd: 5pt) = path(
+#let menu-curve-output(height: 14.6pt, xStart: -2pt, xEnd: 5pt) = curve(
   fill: base-fill-color,
   stroke: base-stroke-color,
-  (xStart, 0pt),
-  (0pt, 0pt),
-  (xEnd, height / 2),
-  (0pt, height),
-  (xStart, height)
+  curve.move((xStart, 0pt)),
+  curve.line((0pt, 0pt)),
+  curve.line((xEnd, height / 2)),
+  curve.line((0pt, height)),
+  curve.line((xStart, height)),
 )
 
 
-#let menu-path-input(height: 14.6pt) = path(
+#let menu-curve-input(height: 14.6pt) = curve(
   fill: base-fill-color,
   stroke: base-stroke-color,
-  closed: false,
-  (9pt, 0pt),
-  (0pt, 0pt),
-  (4pt, height / 2),
-  (0pt, height),
-  (9pt,  height),
+  curve.move((9pt, 0pt)),
+  curve.line((0pt, 0pt)),
+  curve.line((4pt, height / 2)),
+  curve.line((0pt, height)),
+  curve.line((9pt, height)),
 )
 
 #let menu-begin(content) = context {
@@ -125,7 +124,7 @@
       stroke: menu-begin-stroke,
       content
     ),
-    menu-path-output(height: height)
+    menu-curve-output(height: height)
   )
 }
 
@@ -133,7 +132,7 @@
   let height = (measure(content).height + 8pt).abs
   stack(
     dir: ltr,
-    menu-path-input(height: height),
+    menu-curve-input(height: height),
     move(
       dx: -4pt,
       dy: 0pt,
@@ -154,7 +153,7 @@
   let height = (measure(content).height + 8pt).abs
   stack(
     dir: ltr,
-    menu-path-input(height: height),
+    menu-curve-input(height: height),
     move(
       dx: -4pt,
       dy: 0pt,
@@ -168,7 +167,7 @@
         content
       )
     ),
-    menu-path-output(height: height, xStart: -6pt, xEnd: 5pt)
+    menu-curve-output(height: height, xStart: -6pt, xEnd: 5pt)
   )
 }
 
